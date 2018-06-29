@@ -97,32 +97,26 @@
 <p>在hexo目录下运行<br>hexo server 看是否安装正常<br>如正常者如这样</p>
 <p>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>. Press Ctrl+C to stop.</p>
 <p>阿里云的服务器外网地址访问记得开启4000端口。</p>
-<p>###以上是我安装时候对步骤的简化，详情可<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">参考</a></p>
-<p>按上面的步骤如果执行完后需要创建一个文件夹如：</p>
+<h3 id="以上是我安装时候对步骤的简化，详情可参考"><a href="#以上是我安装时候对步骤的简化，详情可参考" class="headerlink" title="以上是我安装时候对步骤的简化，详情可参考"></a>以上是我安装时候对步骤的简化，详情可<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">参考</a></h3><p>按上面的步骤如果执行完后需要创建一个文件夹如：</p>
 <p>mkdir hexo</p>
 <p>hexo init hexo</p>
 <p>cd hexo </p>
-<p>###执行</p>
-<p>npm install</p>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><p>npm install</p>
 <p>得到目录结构如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 <p>其中参数含义可以<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">参考</a></p>
-<h2 id="第二部配置github"><a href="#第二部配置github" class="headerlink" title="第二部配置github"></a>第二部配置github</h2><p>###git 配置</p>
-<p>##1配置要ssh秘钥省略</p>
-<p>##2配置linux上的git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"bu.ru@qq.com"</span>  <span class="comment"># 填写你github注册并且验证的邮箱</span></span><br><span class="line">git config --global user.name <span class="string">"bruce-sha"</span>  <span class="comment"># github 用户名</span></span><br></pre></td></tr></table></figure></p>
-<p>###进入 vim _config 下面有deploy配置</p>
-<p>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:github用户名/github用户名.github.io.git  //这里必须是用户名创建的repository，否则后面通过网址访问不到。<br>  branch: master</p>
+<h2 id="第二部配置github"><a href="#第二部配置github" class="headerlink" title="第二部配置github"></a>第二部配置github</h2><h3 id="git-配置"><a href="#git-配置" class="headerlink" title="git 配置"></a>git 配置</h3><h2 id="1配置要ssh秘钥省略"><a href="#1配置要ssh秘钥省略" class="headerlink" title="1配置要ssh秘钥省略"></a>1配置要ssh秘钥省略</h2><h2 id="2配置linux上的git"><a href="#2配置linux上的git" class="headerlink" title="2配置linux上的git"></a>2配置linux上的git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"bu.ru@qq.com"</span>  <span class="comment"># 填写你github注册并且验证的邮箱</span></span><br><span class="line">git config --global user.name <span class="string">"bruce-sha"</span>  <span class="comment"># github 用户名</span></span><br></pre></td></tr></table></figure>
+<h3 id="进入-vim-config-下面有deploy配置"><a href="#进入-vim-config-下面有deploy配置" class="headerlink" title="进入 vim _config 下面有deploy配置"></a>进入 vim _config 下面有deploy配置</h3><p>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:github用户名/github用户名.github.io.git  //这里必须是用户名创建的repository，否则后面通过网址访问不到。<br>  branch: master</p>
 <p>配置完成后可进行部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hexo g 使用 Hexo 生成静态文件快速而且简单。</span><br><span class="line"></span><br><span class="line">hexo d deploy 用于将本地文件发布到github等git仓库上</span><br></pre></td></tr></table></figure></p>
 <p>配置好后保存退出。即可访问https://用户名.github.io/访问blog。</p>
-<p>##创建一篇新blog</p>
-<p>hexo new “我的blog”</p>
+<h2 id="创建一篇新blog"><a href="#创建一篇新blog" class="headerlink" title="创建一篇新blog"></a>创建一篇新blog</h2><p>hexo new “我的blog”</p>
 <p>该文件会在 source/_posts中生成 我的blog.md linux 下vi 你懂得。我用vi写这些写了一下午 0.0.</p>
 <p>写完后保存 在 hexo g hexo d  部署到github即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/hexo-github-入门.html" data-id="cjizsjh310001wto08zd057hq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/29/hexo-github-入门.html" data-id="cjizsquzf00016oo0sru037uy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/hello-world.html" data-id="cjizsjh2v0000wto0fwb35p5u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/29/hello-world.html" data-id="cjizsquz900006oo0tay1x7zw" class="article-share-link">Share</a>
       
       
     </footer>
