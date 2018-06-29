@@ -5,20 +5,20 @@
   
 
   
-  <title>hexo + github 入门 | Nobody</title>
+  <title>linux + hexo + github 入门配置 | Nobody</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my blog">
+  <meta name="description" content="在开始安装hexo博客之前我没有任何经验的，所以我写的这篇文章是一片菜鸟安装hexo的记录，希望能够帮到也想利用hexo建立自己blog的朋友。整个记录份为三个过程 1.在linux下安装hexo 2.配置github 3.发布一篇新的bolg。 安装hexo第一步先安装git。1$ sudo yum install git-core 第二步安装node.js,安装 Node.js 的最佳方式是使">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo + github 入门">
+<meta property="og:title" content="linux + hexo + github 入门配置">
 <meta property="og:url" content="http://yoursite.com/2018/06/29/hexo-github-入门.html">
 <meta property="og:site_name" content="Nobody">
-<meta property="og:description" content="my blog">
+<meta property="og:description" content="在开始安装hexo博客之前我没有任何经验的，所以我写的这篇文章是一片菜鸟安装hexo的记录，希望能够帮到也想利用hexo建立自己blog的朋友。整个记录份为三个过程 1.在linux下安装hexo 2.配置github 3.发布一篇新的bolg。 安装hexo第一步先安装git。1$ sudo yum install git-core 第二步安装node.js,安装 Node.js 的最佳方式是使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-29T07:35:01.637Z">
+<meta property="og:updated_time" content="2018-06-29T09:22:36.694Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo + github 入门">
-<meta name="twitter:description" content="my blog">
+<meta name="twitter:title" content="linux + hexo + github 入门配置">
+<meta name="twitter:description" content="在开始安装hexo博客之前我没有任何经验的，所以我写的这篇文章是一片菜鸟安装hexo的记录，希望能够帮到也想利用hexo建立自己blog的朋友。整个记录份为三个过程 1.在linux下安装hexo 2.配置github 3.发布一篇新的bolg。 安装hexo第一步先安装git。1$ sudo yum install git-core 第二步安装node.js,安装 Node.js 的最佳方式是使">
   
     <link rel="alternate" href="/atom.xml" title="Nobody" type="application/atom+xml">
   
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo + github 入门
+      linux + hexo + github 入门配置
     </h1>
   
 
@@ -87,11 +87,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>在开始安装hexo博客之前我没有任何经验的，所以我写的这篇文章是一片菜鸟安装hexo的记录，希望能够帮到也想利用hexo建立自己blog的朋友。<br>整个记录份为三个过程 1.在linux下安装hexo 2.配置github 3.发布一篇新的bolg。</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="第一步先安装git。"><a href="#第一步先安装git。" class="headerlink" title="第一步先安装git。"></a>第一步先安装git。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install git-core</span><br></pre></td></tr></table></figure>
+<h3 id="第二步安装node-js-安装-Node-js-的最佳方式是使用-nvm。"><a href="#第二步安装node-js-安装-Node-js-的最佳方式是使用-nvm。" class="headerlink" title="第二步安装node.js,安装 Node.js 的最佳方式是使用 nvm。"></a>第二步安装node.js,安装 Node.js 的最佳方式是使用 nvm。</h3><h3 id="方式一-cURL"><a href="#方式一-cURL" class="headerlink" title="方式一 cURL:"></a>方式一 cURL:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
+<h3 id="方式二-wget"><a href="#方式二-wget" class="headerlink" title="方式二 wget:"></a>方式二 wget:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
+<h3 id="安装完成后，重启终端并执行下列命令即可安装-Node-js。（linux-reboot）"><a href="#安装完成后，重启终端并执行下列命令即可安装-Node-js。（linux-reboot）" class="headerlink" title="安装完成后，重启终端并执行下列命令即可安装 Node.js。（linux:reboot）"></a>安装完成后，重启终端并执行下列命令即可安装 Node.js。（linux:reboot）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
+<h3 id="第三步安装hexo。"><a href="#第三步安装hexo。" class="headerlink" title="第三步安装hexo。"></a>第三步安装hexo。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>在hexo目录下运行<br>hexo server 看是否安装正常<br>如正常者如这样</p>
+<p>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>. Press Ctrl+C to stop.</p>
+<p>阿里云的服务器记得启动4000端口。</p>
+<p>###以上是我安装时候对步骤的简化，详情可<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">参考</a></p>
+<p>按上面的步骤如果执行完后需要创建一个文件夹如：</p>
+<p>mkdir hexo</p>
+<p>hexo init hexo</p>
+<p>cd hexo 的目录如下结构：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>其中参数含义可以<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">参考</a></p>
+<h2 id="第二部配置github"><a href="#第二部配置github" class="headerlink" title="第二部配置github"></a>第二部配置github</h2><p>###git 配置</p>
+<p>##1配置要ssh秘钥</p>
+<p>##2配置linux上的git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"bu.ru@qq.com"</span>  <span class="comment"># 填写你github注册并且验证的邮箱</span></span><br><span class="line">git config --global user.name <span class="string">"bruce-sha"</span>  <span class="comment"># github 用户名</span></span><br></pre></td></tr></table></figure></p>
+<p>###进入 vim _config 下面有deploy配置</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:github用户名/github用户名.github.io.git  //这里必须是用户名创建的repository，否则后面通过网址访问不到。<br>  branch: master</p>
+<p>配置好后保存退出。即可访问https://用户名.github.io/访问blog。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/hexo-github-入门.html" data-id="cjizpebmc00013oo0de551nk3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/29/hexo-github-入门.html" data-id="cjizrmhf30001v3o0qejr6d2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +162,7 @@
       <ul>
         
           <li>
-            <a href="/2018/06/29/hexo-github-入门.html">hexo + github 入门</a>
+            <a href="/2018/06/29/hexo-github-入门.html">linux + hexo + github 入门配置</a>
           </li>
         
           <li>
