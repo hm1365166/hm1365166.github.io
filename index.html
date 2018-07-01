@@ -66,6 +66,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-volatile-的实现原理及使用场景" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/volatile-的实现原理及使用场景.html" class="article-date">
+  <time datetime="2018-07-01T03:06:35.000Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/volatile-的实现原理及使用场景.html">volatile 的实现原理及使用场景</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="了解volatile"><a href="#了解volatile" class="headerlink" title="了解volatile"></a>了解volatile</h3><p>volatile 修饰的使用及实现原理。在java语言规范第三版中对volatile的定义如下：<br>java 编程语言允许线程访问共享变量，为了确保共享变量能被准确和一致的更新，<br>线程应该确保通过排它锁单独获得这个变量。</p>
+<p>也就是当我们访问共享变量时，为了确保能正确访问所以需要加上排它锁。而java本<br>身提供了volatile，如果某些字段被修饰成了volatile类型的话没那么java线程内存<br>模型将确保所有的线程看到的这个变量的值是一致的。换句话说volatile是轻量级的<br>synchronize。</p>
+<h3 id="volatile的可见性原理"><a href="#volatile的可见性原理" class="headerlink" title="volatile的可见性原理"></a>volatile的可见性原理</h3><p>理解volatile可见性，首先要知道jmm内存模型。<br>从汇编的角度上来看，被volatile修饰的代码在生成汇编语言的时候会多出一行汇编<br>代码，这行汇编代码带lock前缀。而在lock前缀指令会发生两件事</p>
+<ol>
+<li>当前缓存行数据写操作时，会触发该缓存行写回系统主内存。</li>
+<li>这个写回内存的操作会使其他缓存了该地址的数据无效。</li>
+</ol>
+<p>即这样在底层实现了volatile的可见性。</p>
+<h2 id="volatile的防重排"><a href="#volatile的防重排" class="headerlink" title="volatile的防重排"></a>volatile的防重排</h2><p>在jvm引入jit之后，jit会优化代码语句从排。但是重排的原理要服从happen-before<br>原则，而volatile修饰的变量会在汇编代码是插入 memory barriers（内存屏障）来<br>防止语句的重排。这样的好处有，当我们对一个变量同时读写的时候，它可以保证写<br>会发生在读的前面。还有就是单例模式的double-check。单例用volatile修饰可以防<br>语句的重排，而导致npe异常。</p>
+<h2 id="volatile的使用场景及注意内容"><a href="#volatile的使用场景及注意内容" class="headerlink" title="volatile的使用场景及注意内容"></a>volatile的使用场景及注意内容</h2><p>1.volatile经典的使用场景，有ConcurrentHashMap的数据结构都是用volatile来修饰了<br>这也就是同步ConcurrentHashMap的get操作不需要加锁的原因，还有就是long，double<br>这种基础类型需要用volatile，他们的读、写操作并不是原子的。然后就是单例模式下<br>的double-check模式。<br>2.使用volatile时应该注意的问题就是，volatile只是保证了单个修饰的变量的可见性，<br>防重排。并不保证原子操作，列如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">volatile int i = 0；</span><br><span class="line"></span><br><span class="line">i = i + 1；</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">i++；</span><br></pre></td></tr></table></figure></p>
+<p>上述代码中的两种操作都是不符合原子操作的，具体的使用场景可以参考1中的使用场景。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/01/volatile-的实现原理及使用场景.html" data-id="cjj29b96b0002wyo01673bd9b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo-github-入门" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/29/hexo-github-入门.html" class="article-date">
@@ -116,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/hexo-github-入门.html" data-id="cjizsquzf00016oo0sru037uy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/29/hexo-github-入门.html" data-id="cjj29b9690001wyo0ucbdia71" class="article-share-link">Share</a>
       
       
     </footer>
@@ -161,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/hello-world.html" data-id="cjizsquz900006oo0tay1x7zw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/29/hello-world.html" data-id="cjj29b95u0000wyo0v7a0afex" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +236,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li></ul>
     </div>
   </div>
 
@@ -200,6 +247,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/07/01/volatile-的实现原理及使用场景.html">volatile 的实现原理及使用场景</a>
+          </li>
         
           <li>
             <a href="/2018/06/29/hexo-github-入门.html">linux + hexo + github 入门配置</a>
